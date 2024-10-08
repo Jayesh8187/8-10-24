@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Pattern-2</title>
+    <style>
+        pre {
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Star Pattern-2</h1>
+    <pre id="starPattern"></pre>
+
+    <script>
+        function drawPattern(rows) {
+            let pattern = '';
+            for (let i = 1; i <= rows; i++) {
+                pattern += ' '.repeat(rows - i) + '*'.repeat(i) + '\n';
+            }
+            return pattern;
+        }
+
+        const starPattern = drawPattern(5);
+        document.getElementById('starPattern').textContent = starPattern;
+    </script>
+</body>
+</html>

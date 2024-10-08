@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Numbers Under 100</title>
+</head>
+<body>
+    <h1>Prime Numbers Under 100</h1>
+    <button onclick="printPrimeNumbers()">Show Prime Numbers</button>
+    <h2 id="result"></h2>
+
+    <script>
+        function isPrime(num) {
+            if (num <= 1) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        function printPrimeNumbers() {
+            let primes = [];
+            for (let i = 2; i < 100; i++) {
+                if (isPrime(i)) {
+                    primes.push(i);
+                }
+            }
+            document.getElementById("result").innerText = `Prime numbers under 100: ${primes.join(', ')}`;
+        }
+    </script>
+</body>
+</html>

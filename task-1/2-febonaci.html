@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="result"></h1>
+</body>
+<script>
+    function printFibonacci(n) {
+    if (n <= 0) {
+        console.log("Input should be a positive integer.");
+        return;
+    }
+    
+    let fibonacciSeries = [];
+    let a = 0, b = 1;
+
+    for (let i = 0; i < n; i++) {
+        if (i === 0) {
+            fibonacciSeries.push(a);
+        } else if (i === 1) {
+            fibonacciSeries.push(b);
+        } else {
+            let next = a + b;
+            fibonacciSeries.push(next);
+            a = b;
+            b = next;
+        }
+    }
+
+    document.getElementById("result").innerHTML = (`First ${n} terms of the Fibonacci series: ${fibonacciSeries.join(', ')}`);
+}
+
+const n = parseInt(prompt("Enter the number of terms (N) in the Fibonacci series: "), 10);
+printFibonacci(n);
+
+</script>
+</html>

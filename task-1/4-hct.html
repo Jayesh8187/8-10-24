@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate HCF</title>
+</head>
+<body>
+    <h1>Calculate HCF of Two Numbers</h1>
+    <label for="num1">Enter first number:</label>
+    <input type="number" id="num1">
+    <label for="num2">Enter second number:</label>
+    <input type="number" id="num2">
+    <button onclick="calculateHCF()">Calculate HCF</button>
+    <h2 id="result"></h2>
+
+    <script>
+        function calculateHCF() {
+            const num1 = parseInt(document.getElementById("num1").value, 10);
+            const num2 = parseInt(document.getElementById("num2").value, 10);
+
+            function hcf(a, b) {
+                while (b !== 0) {
+                    let temp = b;
+                    b = a % b;
+                    a = temp;
+                }
+                return a;
+            }
+
+            const result = hcf(num1, num2);
+            document.getElementById("result").innerText = `The HCF of ${num1} and ${num2} is: ${result}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar li {
+    margin: 0 1rem;
+}
+
+.carousel img {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    height: 900px;
+    object-fit: cover;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+.card {
+    border: 1px solid #ccc;
+    margin: 1rem;
+    padding: 1rem;
+    width: 200px;
+}
+
+.banner {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f4f4f4;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+}

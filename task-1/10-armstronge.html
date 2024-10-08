@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong Numbers Under 1000</title>
+</head>
+<body>
+    <h1>Armstrong Numbers Under 1000</h1>
+    <ul id="armstrongList"></ul>
+
+    <script>
+        function isArmstrongNumber(num) {
+            const digits = num.toString().split('');
+            const sum = digits.reduce((acc, digit) => acc + Math.pow(Number(digit), digits.length), 0);
+            return sum === num;
+        }
+
+        function findArmstrongNumbers(limit) {
+            const armstrongNumbers = [];
+            for (let i = 0; i < limit; i++) {
+                if (isArmstrongNumber(i)) {
+                    armstrongNumbers.push(i);
+                }
+            }
+            return armstrongNumbers;
+        }
+
+        const armstrongNumbers = findArmstrongNumbers(1000);
+        const list = document.getElementById('armstrongList');
+        armstrongNumbers.forEach(num => {
+            const listItem = document.createElement('li');
+            listItem.textContent = num;
+            list.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
